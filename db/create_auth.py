@@ -1,12 +1,14 @@
 import mysql.connector
 from mysql.connector import Error
+import os
 
 try:
     conn = mysql.connector.connect(
-        host="localhost",
-        user="root",           # your MySQL username
-        password="gopi2004",  # your MySQL password
-        database="auth"        # your database name
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
+        port=int(os.getenv("DB_PORT", 3306))
     )
     cur = conn.cursor()
 
