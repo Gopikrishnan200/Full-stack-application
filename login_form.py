@@ -12,7 +12,7 @@ ALGORITHM = "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
 
-# ------------------ PASSWORD TOOLS ------------------
+# ------------------ PASSWORD TOOLS ------------------------------------
 def hash_password(password: str):
     return pwd_context.hash(password)
 
